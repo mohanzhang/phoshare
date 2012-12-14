@@ -80,7 +80,7 @@ def make_foldername(name):
     """Returns a valid folder name by replacing problematic characters."""
     result = u''
     for c in name.strip():
-        if c.isdigit() or c.isalpha() or c in (',', ' ', '.', '-'):
+        if c.isdigit() or c.isalpha() or c in (',', '.', '-'):
             result += c
         elif c == ':':
             result += "."
@@ -92,14 +92,14 @@ def make_image_filename(name):
     """Returns a valid file name by replacing problematic characters."""
     result = u''
     for c in name:
-        if c.isalnum() or c.isspace():
+        if c.isalnum():
             result += c
         elif c == ":":
             result += '.'
         elif c == "/" or c == '-':
             result += '-'
         else:
-            result += ' '
+            result += '_'
     return unicodedata.normalize("NFC", result)
 
 def is_image_file(file_name):

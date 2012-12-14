@@ -1,3 +1,38 @@
+This is a svn2git converted repository of Tilman Sporkert's excellent Phoshare
+(http://code.google.com/p/phoshare/). While at the time of writing the latest
+version was 1.5.2, svn trunk was only at 1.4.1. Some of the features described
+on the homepage are therefore missing.
+
+But that doesn't matter, because this repo exists solely to satisfy my own
+export needs. If you want to carry on the Phoshare project, I would recommend
+doing a more proper conversion of the original repo, which probably entails
+converting all the branches (not just trunk).
+
+My change on top of the last revision on trunk at the time of writing adds a
+few hacks to the way the folder and image names are computed. Straight up
+hacks, meaning that I didn't want spaces in the name of the exported folder or
+filename. If you have the exact same requirements, then yeah, I suppose you can
+use this version. Otherwise, it's a bad idea.
+
+As a reminder to myself, I had to install pip and then get the gdata and pyttk
+modules. I was then able to run it like this:
+
+  python Phoshare.py  --export "/Users/mohanzhang/Pictures/phoshare" \
+                      --iphoto "~/Pictures/iPhoto Library" \
+                      --events "." \
+                      --foldertemplate "{yyyy}-{mm}-{dd}_{name}" \
+                      --nametemplate "{yyyy}-{mm}-{dd}_{index0}_{title}" \
+                      --captiontemplate "{description}" \
+                      --update \
+                      --delete \
+                      --verbose \
+                      --dryrun
+
+Original README follows below:
+
+------------------------------------------------------------------------------
+
+
 phoshare allows you to export and synchronize your iPhoto library to a 
 folder tree. It preserves both the original and modified image, your event 
 and album organization, and applies your iPhoto titles, descriptions, 
