@@ -28,6 +28,21 @@ modules. I was then able to run it like this:
                       --verbose \
                       --dryrun
 
+More notes-to-self: complaints about missing libraries might also be because I
+used virtualenv:
+
+- First create a virtualenv if there is none:
+  $ python virtualenv.py phoshare
+
+- For newly created virtualenvs, use:
+  $ source bin/activate
+
+- Then get the two requisite libraries:
+  $ pip install pyttk
+  $ pip install gdata
+
+
+
 Original README follows below:
 
 ------------------------------------------------------------------------------
